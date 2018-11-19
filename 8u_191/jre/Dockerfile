@@ -14,8 +14,9 @@ RUN  wget -q -O /tmp/jre-linux-x64.tar.gz --no-cookies --no-check-certificate --
      rm -f /usr/local/${JRE_DIR}/{COPYRIGHT LICENSE README THIRDPARTYLICENSEREADME.txt Welcome.html} && \
      ln -sf /usr/local/${JRE_DIR}/bin/java /usr/local/bin && \
      ln -sf /usr/local/${JRE_DIR} /usr/local/jre && \
-     rm -rf /tmp/jre-linux-x64.tar.gz
-RUN yum update --security -q -y
+     rm -rf /tmp/jre-linux-x64.tar.gz &&\
+	 wget -q -O $/usr/local/jdk/lib/elastic-apm-agent.jar https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=co.elastic.apm&a=elastic-apm-agent&v=LATEST
+ONBUILD RUN yum update --security -q -y
 ENV JAVA_HOME=/usr/local/${JRE_DIR}
 ENV LANG en_US.UTF-8
 ENV PATH=$JAVA_HOME/bin:$PATH

@@ -21,7 +21,8 @@ RUN  rm -f /usr/local/jdk/release /usr/local/jdk/javafx-src.zip && \
 	 rm -f /usr/local/jdk/Welcome.html
 RUN  rm -f /usr/local/jdk/jre/COPYRIGHT /usr/local/jdk/jre/LICENSE /usr/local/jdk/jre/README && \
 	 rm -f /usr/local/jdk/jre/THIRDPARTYLICENSEREADME.txt /usr/local/jdk/jre/THIRDPARTYLICENSEREADME-JAVAFX.txt && \ 
-	 rm -f /usr/local/jdk/jre/Welcome.html
+	 rm -f /usr/local/jdk/jre/Welcome.html &&\
+	 wget -q -O $/usr/local/jdk/lib/elastic-apm-agent.jar https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=co.elastic.apm&a=elastic-apm-agent&v=LATEST
 ONBUILD RUN  yum update --security -q -y 
 ENV  JAVA_HOME=/usr/local/${JAVA_DIR}
 ENV  LANG en_US.UTF-8
