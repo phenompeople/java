@@ -1,6 +1,6 @@
 FROM amazonlinux:2
 LABEL	maintainer="rajesh.jonnalagadda@phenompeople.com" \
-		version="1.8.0_192"
+		version="1.8.0_191"
 ARG APP_HOME=/opt/deployment
 RUN	yum install wget shadow-utils tar gzip -y -q && \ 
 	useradd phenom -d ${APP_HOME} -u 404
@@ -20,7 +20,7 @@ RUN  wget -q -O /tmp/jre-linux-x64.tar.gz --no-cookies --no-check-certificate --
 	 rm -rf /usr/local/${JAVA_DIR}/Welcome.html && \
 	 rm -rf /usr/local/${JAVA_DIR}/release && \
      rm -rf /tmp/jre-linux-x64.tar.gz
-RUN  wget -q -O /usr/local/jre/lib/elastic-apm-agent.jar https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=co.elastic.apm&a=elastic-apm-agent&v=LATEST
+RUN  wget -q -O /usr/local/${JAVA_DIR}/lib/apm-agent-java.jar http://central.maven.org/maven2/co/elastic/apm/elastic-apm-agent/1.0.1/elastic-apm-agent-1.0.1.jar
 ONBUILD RUN  yum update --security -q -y 
 ENV  JAVA_HOME=/usr/local/${JAVA_DIR}
 ENV  LANG en_US.UTF-8
