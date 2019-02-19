@@ -13,6 +13,7 @@ RUN  wget -q -O /tmp/jdk-linux-x64.tar.gz --no-cookies --no-check-certificate --
      tar -xzf /tmp/jdk-linux-x64.tar.gz -C /usr/local && \
      ln -sf /usr/local/${JAVA_DIR}/bin/java /usr/local/bin && \
      ln -sf /usr/local/${JAVA_DIR} /usr/local/jdk && \
+  	 mkdir -p /opt/deployment/dumps && \
   	 rm -rf /tmp/jdk-linux-x64.tar.gz
 RUN  rm -f /usr/local/jdk/release /usr/local/jdk/javafx-src.zip && \
 	 rm -f /usr/local/jdk/COPYRIGHT /usr/local/jdk/src.zip && \
@@ -24,6 +25,9 @@ RUN  rm -f /usr/local/jdk/jre/COPYRIGHT /usr/local/jdk/jre/LICENSE /usr/local/jd
 	 rm -f /usr/local/jdk/jre/Welcome.html
 RUN  wget -q -O /usr/local/${JAVA_DIR}/lib/apm-agent-java.jar http://central.maven.org/maven2/co/elastic/apm/elastic-apm-agent/1.3.0/elastic-apm-agent-1.3.0.jar
 ENV  JAVA_HOME=/usr/local/${JAVA_DIR}
+ENV  JAVA_OPTS="$JAVA_OPTS -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+AlwaysPreTouch -server -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 \
+	 -Djna.nosys=true -Djdk.io.permissionsUseCanonicalPath=true -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dlog4j.shutdownHookEnabled=false \
+	 -Dlog4j2.disable.jmx=true -Dlog4j.skipJansi=true -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/opt/phenom/dumps"
 ENV  LANG en_US.UTF-8
 ENV  PATH=$JAVA_HOME/bin:$PATH
 ONBUILD RUN  yum update --security -q -y 
