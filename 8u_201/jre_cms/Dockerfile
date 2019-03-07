@@ -4,7 +4,7 @@ LABEL	maintainer="rajesh.jonnalagadda@phenompeople.com" \
 ARG APP_HOME=/opt/deployment
 RUN	yum install wget shadow-utils tar gzip -y -q && \
 	groupadd phenom -g 504 && \ 
-	useradd phenom -d ${APP_HOME} -u 504
+	useradd phenom -d ${APP_HOME} -u 504 -g phenom
 ARG JAVA_VERSION=8u201
 ARG JAVA_DIR=jre1.8.0_201
 ARG JAVA_BUILD=b09
