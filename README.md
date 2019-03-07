@@ -1,8 +1,9 @@
 [![dockeri.co](http://dockeri.co/image/phenompeople/oraclejdk)](https://registry.hub.docker.com/phenompeople/oraclejdk/)
+
 [![dockeri.co](http://dockeri.co/image/phenompeople/oraclejre)](https://registry.hub.docker.com/phenompeople/oraclejre/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Oracle JDK & JRE
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Dockerfiles for building Amazon Linux V2 based Oracle Java images.
 
