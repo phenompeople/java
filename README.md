@@ -22,8 +22,8 @@ The images are available directly from [phenompeople organization] (https://hub.
 [![Docker Build Status](https://img.shields.io/docker/build/phenompeople/oraclejdk.svg?style=plastic)](https://hub.docker.com/r/phenompeople/oraclejdk/)
 [![JDK Docker Pulls](https://img.shields.io/docker/pulls/phenompeople/oraclejdk.svg?style=plastic)](https://hub.docker.com/r/phenompeople/oraclejdk/)
 
-* **`latest` 		([8u_201/jdk/Dockerfile](https://bitbucket.org/phenompeople/oraclejava/src/master/8u_201/jdk/Dockerfile))**
-* **`8u201` 		([8u_201/jdk/Dockerfile](https://bitbucket.org/phenompeople/oraclejava/src/master/8u_201/jdk/Dockerfile))**
+* **`latest` 		([8u_201/jdk/Dockerfile](https://github.com/phenompeople/oraclejava/blob/master/8u_201/jdk/Dockerfile))**
+* **`8u201` 		([8u_201/jdk/Dockerfile](https://github.com/phenompeople/oraclejava/blob/master/8u_201/jdk/Dockerfile))**
 
 #### phenompeople/oraclejre
 
@@ -31,8 +31,9 @@ The images are available directly from [phenompeople organization] (https://hub.
 [![Docker Build Status](https://img.shields.io/docker/build/phenompeople/oraclejre.svg?style=plastic)](https://hub.docker.com/r/phenompeople/oraclejre/)
 [![JRE Docker Pulls](https://img.shields.io/docker/pulls/phenompeople/oraclejre.svg?style=plastic)](https://hub.docker.com/r/phenompeople/oraclejre/)
 
-* **`latest` 		([8u_201/jdk/Dockerfile](https://bitbucket.org/phenompeople/oraclejava/src/master/8u_201/jre/Dockerfile))**
-* **`8u201` 		([8u_201/jdk/Dockerfile](https://bitbucket.org/phenompeople/oraclejava/src/master/8u_201/jre/Dockerfile))**
+* **`latest` 		([8u_201/jdk/Dockerfile](https://github.com/phenompeople/oraclejava/src/master/8u_201/jre/Dockerfile))**
+* **`2.5` 			([2.5/jre/Dockerfile](https://github.com/phenompeople/oraclejava/blob/master/2.5/jre/Dockerfile))**
+* **`8u201` 		([8u_201/jdk/Dockerfile](https://github.com/phenompeople/oraclejava/src/master/8u_201/jre/Dockerfile))**
 
 #### Pre-Requisites
 
